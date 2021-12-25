@@ -233,4 +233,4 @@ graph = {
 
 }
 
-graph('hostel_1')
+print(graph('hostel_1'))
