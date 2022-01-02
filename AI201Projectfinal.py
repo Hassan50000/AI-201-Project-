@@ -242,6 +242,48 @@ def ucs(graph, COST, start, goal):
 ucs(graph,cost ‘A’, ‘G’)
 print(ucs(graph, Hurestics, 'S', 'G'))
     
-# Trying to search things and connect with our Internet Interface .. Search queries     
+# Trying to search things and connect with our Internet Interface .. Search queries    
+
+
+r1 = sr.Recognizer()
+r2 = sr.Recognizer()
+r3 = sr.Recognizer()
+
+with sr.Microphone() as source:
+    print('[ALEXA: searching someting or connecting to a builtin ur or map  ON google or YOUTUBE]')
+    print("Please Speak Anything :")
+    audio = r3.listen(source)
+    
+if 'ALEXA' in r2.recognize_google(audio):
+    r2=sr.Recognizer()
+    url='https://www.google.com/'
+    
+    with sr.Microphone() as source:
+        print("What do u want to search...:")
+        audio = r2.listen(source)
+    try:
+        get = r2.recognize_google(audio)
+        print(get)
+        wb.get().open_new(url+get)
+    except sr.UnknownValueError:
+       print("error generated please try again .. Thankyou")
+    except sr.RequestError as e:
+        print('error generated'.format(e))
+        
+if 'video' in r1.recognize_google(audio):
+    r1=sr.Recognizer()
+    url='https://www.google.com/'
+    
+    with sr.Microphone() as source:
+        print("Speak Anything and  search your problem.. TRY Again:")
+        audio = r1.listen(source)
+    try:
+        get = r1.recognize_google(audio)
+        print(get)
+        wb.get().open_new(url+get)
+    except sr.UnknownValueError:
+       print("error generated please try again .. Thankyou")
+    except sr.RequestError as e:
+        print('error generated'.format(e))
 
 ''' FURTHER CODE ..... '''
