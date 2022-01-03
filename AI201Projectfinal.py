@@ -4,6 +4,7 @@ import pyttsx3
 import gtts
 from gtts import gTTS
 
+import webbrowser as wb
 
 import speech_recognition as sr
 
@@ -32,7 +33,10 @@ with sr.Microphone() as source:
    
     except Exception as e:
           print("Error {} : ".format(e) )
-          
+            
+'''If you receive errors such as No module named win32com.client, No module
+named win32, or No module named win32api, you will need to additionally install pypiwin32.
+ pip install pyttsx3'''          
    
     engine = pyttsx3.init()
 
@@ -157,7 +161,129 @@ for i in paths_bfs:
     print(temp)
     print("\n")
     
+print("Expanded nodes are : ",dfs_expended(Gp, 'A', 'G'))     
+
+print("Expanded nodes are : ",bfs_expended(Gp, 'A', 'G'))   
+
+print("The path using breadth first search is : ")
+
+y=list(dfs_paths(Gp, 'F', 'G'))
+
+print(y)
+
+# FINDING Cost of possible paths 
+
+def ucs_path(graph,cost,start,goal):
+    queue = []
+    solution_cost=[]
+    queue.append([0, start])
+ 
+    visited = {}
+ 
+    while (len(queue) > 0):
+        queue = sorted(queue)
+        p = queue[-1]
+        del queue[-1]
+        p[0] =p[0]*-1
+ 
+        if (p[1] == goal):
+            visited[p[1]]=[k for k,v in graph.items() if p[1] in v]
+            solution_cost=p[0]
+            break
+        queue = sorted(queue)
+ 
+        if (p[1] not in visited):
+            for i in range(len(graph[p[1]])):
+                if graph[p[1]][i] not in visited:
+                    queue.append( [(p[0] + cost[(p[1], graph[p[1]][i])])* -1, graph[p[1]][i]])
+                    path=[k for k,v in graph.items() if p[1] in v]
+        visited[p[1]] = path
+    solution = set([v[0] for v in visited.values() if len(v)>0]) | set('G')
+    return solution, solution_cost
+
+
+
+print(ucs_path(Graph,Cost,'S','G'))
+print("PATH WITH ITS COST: ", ucs_path(graph,Hurestics,'S','G'))
+
     
+def ucs(graph, start,goal):
+     visited, pqueue = [], [(0,start)]
+     while pqueue:
+         vertex = pqueue.pop(0)
+         if vertex[1] not in visited:
+               visited.append(vertex[1])
+               temp=[l[0] for l in graph[vertex[1]] if l[0] not in visited]
+               cost=[l[1]+vertex[0] for l in graph[vertex[1]] if l[0] not in visited]
+               pqueue.extend(zip(cost,temp))
+               pqueue.sort()
+ 
+        if vertex[1]==goal:
+        break
+    return visited
+Let’s run this for the graph that we defined earlier.
+ucs(graph, ‘A’, ‘G’)
+
+# above and below code of UCS have difference, in lower one we are communicating and handling the cost as well...
+
+def ucs(graph, COST, start, goal):
+    visited, pqueue = [], [(0,start)]
+    while pqueue:
+        vertex = pqueue.pop(0)
+        if vertex[1] not in visited:
+            visited.append(vertex[1])
+            if vertex[1]==goal:
+                break
+            temp=[l for l in graph[vertex[1]] if l not in visited]
+            cost=[COST[(vertex[1],l)]+ vertex[0] for l in temp]
+            pqueue.extend(zip(cost,temp))
+            pqueue.sort()
+    return visited
+ucs(graph,cost ‘A’, ‘G’)
+print(ucs(graph, Hurestics, 'S', 'G'))
     
+# Trying to search things and connect with our Internet Interface .. Search queries    
+
+
+r1 = sr.Recognizer()
+r2 = sr.Recognizer()
+r3 = sr.Recognizer()
+
+with sr.Microphone() as source:
+    print('[ALEXA: searching someting or connecting to a builtin ur or map  ON google or YOUTUBE]')
+    print("Please Speak Anything :")
+    audio = r3.listen(source)
     
+if 'ALEXA' in r2.recognize_google(audio):
+    r2=sr.Recognizer()
+    url='https://www.google.com/'
+    
+    with sr.Microphone() as source:
+        print("What do u want to search...:")
+        audio = r2.listen(source)
+    try:
+        get = r2.recognize_google(audio)
+        print(get)
+        wb.get().open_new(url+get)
+    except sr.UnknownValueError:
+       print("error generated please try again .. Thankyou")
+    except sr.RequestError as e:
+        print('error generated'.format(e))
+        
+if 'video' in r1.recognize_google(audio):
+    r1=sr.Recognizer()
+    url='https://www.google.com/'
+    
+    with sr.Microphone() as source:
+        print("Speak Anything and  search your problem.. TRY Again:")
+        audio = r1.listen(source)
+    try:
+        get = r1.recognize_google(audio)
+        print(get)
+        wb.get().open_new(url+get)
+    except sr.UnknownValueError:
+       print("error generated please try again .. Thankyou")
+    except sr.RequestError as e:
+        print('error generated'.format(e))
+
 ''' FURTHER CODE ..... '''
