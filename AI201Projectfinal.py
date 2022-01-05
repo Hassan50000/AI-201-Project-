@@ -286,4 +286,25 @@ if 'video' in r1.recognize_google(audio):
     except sr.RequestError as e:
         print('error generated'.format(e))
 
+def is_seperator(dataList):
+    for i in range(len(dataList)-1):
+        if dataList[i] == 'is':
+            return dataList[i+1]
+''' file handlin code data retrieval thu voice commaands returning specific words ..... '''
+myFile = open('input.txt')
+sentenceList = []
+afterIs = []
+
+data = myFile.readlines()
+print(data)
+sentenceList = []
+for i in data:
+    sentenceList.append(i.split(' '))
+print(sentenceList)
+
+for i in range(len(sentenceList)):
+    afterIs.append(is_seperator(sentenceList[i]))
+
+for i in afterIs:
+    print(i)
 ''' FURTHER CODE ..... '''
