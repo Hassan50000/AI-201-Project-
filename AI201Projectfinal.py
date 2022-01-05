@@ -286,13 +286,25 @@ if 'video' in r1.recognize_google(audio):
     except sr.RequestError as e:
         print('error generated'.format(e))
 ''' file handlin code data retrieval thu voice commaands returning specific words ..... '''
-def is_seperator1(dataList):
-    for i in range(len(dataList)-1):
-        if dataList[i] == 'My':
-            return dataList[i+1]
+
+
+ #In text file it is printed : 
+ #Hello I wanna travel from Hostel9 to Tuc
+ #Command i.e. the above line is given through audio from microphone
+ #The program saves that audio in a text file and then returns only our source and destination 
+
+ #According to my program the AI smart machine would itself automatically detect the source and destination
+
+ # AI Assistant voice would return something like this : 
+ # Your Source is Hostel9 and your destination is Tuc Thankyou for travelling with us 
+
 def is_seperator(dataList):
     for i in range(len(dataList)-1):
-        if dataList[i] == 'is':
+        if dataList[i] == 'from':
+            return dataList[i+1]
+def is_seperator1(dataList):
+    for i in range(len(dataList)-1):
+        if dataList[i] == 'to':
             return dataList[i+1]
 
 myFile = open('input.txt')
@@ -309,6 +321,28 @@ print(sentenceList)
 for i in range(len(sentenceList)):
     afterIs.append(is_seperator(sentenceList[i]))
 
+
 for i in afterIs:
     print(i)
+
+#********************************************************************
+
+myFile = open('input.txt')
+sentenceList1 = []
+afterIs1 = []
+
+data1 = myFile.readlines()
+print(data1)
+sentenceList1 = []
+for i in data1:
+    sentenceList1.append(i.split(' '))
+print(sentenceList1)
+
+for i in range(len(sentenceList1)):
+    afterIs1.append(is_seperator1(sentenceList1[i]))
+
+
+for i in afterIs1:
+    print(i)
+
 ''' FURTHER CODE ..... '''
