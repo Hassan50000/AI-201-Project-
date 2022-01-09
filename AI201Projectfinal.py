@@ -369,7 +369,7 @@ HOSTEL_9_TO_BRABERS = [
                     (34.071613, 72.645029)
     ]
 
-INCUBATION_TO_ MOSQUE[
+INCUBATION_TO_ MOSQUE = [
                     (34.071701, 72.645716),
                     (34.071613, 72.645029),
                     (34.071211, 72.643594),
@@ -396,48 +396,196 @@ HOSTEL_2_TO_RAJU = [
                 (34.070269, 72.647414)
 ]
 
+HBL_TO_HOSTEL_1 = [
+                (34.069649624581146, 72.64704224845387),
+                (34.070118, 72.645633),
+                (34.069882, 72.643959),
+                (34.07060208340641, 72.64304237054814),
+                (34.071215878227676, 72.64143689337763),
+                (34.07101128044904, 72.64084684626256),
+                (34.069456, 72.641095), 
+                (34.069145, 72.640309),
+                (34.069145, 72.640309)
+]
+
 import folium as f
 from folium import plugins
 
 my_map = f.Map(location=[34.06961775193662, 72.6445797253496], zoom_start=15)
 
-f.Marker(location=[34.06839693200607, 72.64158783566288], popup="GIKI CRICKET GROUND", tooltip="CRICKET GROUND").add_to(my_map)
-f.Marker(location=[34.071411, 72.646636], popup="MEDICAL CENTER", tooltip="MC").add_to(my_map)
-f.Marker(location=[34.07060208340641, 72.64304237054814], popup="NEW ACADAMIC BLOCK", tooltip="ACADAMIC BLOCK").add_to(my_map)
-f.Marker(location=[34.069649624581146, 72.64704224845387], popup="HBL ATM", tooltip="ATM").add_to(my_map)
-f.Marker(location=[34.070685479001895, 72.64723463307139], popup="RAJU HOTEL", tooltip="RAJU").add_to(my_map)
-f.Marker(location=[34.07345831935395, 72.64888914083238], popup="C TYPE RESIDENTIAL AREA", tooltip="C TYPE").add_to(my_map)
+f.Marker(location=[34.06839693200607, 72.64158783566288],
+                    popup="GIKI CRICKET GROUND", 
+                    tooltip="CRICKET GROUND"
+                ).add_to(my_map)
+f.Marker(location=[34.071411, 72.646636], 
+                    popup="MEDICAL CENTER", 
+                    tooltip="MC"
+                ).add_to(my_map)
+f.Marker(location=[34.07060208340641, 72.64304237054814], 
+                    popup="NEW ACADAMIC BLOCK", 
+                    tooltip="ACADAMIC BLOCK"
+                ).add_to(my_map)
+f.Marker(location=[34.069649624581146, 72.64704224845387], 
+                    popup="HBL ATM", 
+                    tooltip="ATM"
+                ).add_to(my_map)
+f.Marker(location=[34.070685479001895, 72.64723463307139], 
+                    popup="RAJU HOTEL", 
+                    tooltip="RAJU"
+                ).add_to(my_map)
+f.Marker(location=[34.07345831935395, 72.64888914083238], 
+                    popup="C TYPE RESIDENTIAL AREA", 
+                    tooltip="C TYPE"
+                ).add_to(my_map)
 
-f.Marker(location=[34.072437, 72.642489], popup="FACULTY CLUB", tooltip="FACULTY CLUB").add_to(my_map)
-f.Marker(location=[34.069005, 72.647229], icon=f.Icon(color="orange", icon="cloud"),popup="TUC MOSQUE", tooltip="TUC MOSQUE").add_to(my_map)
-f.Marker(location=[34.071211, 72.643594], icon=f.Icon(color="red", icon="cloud"),popup="LIBRARY", tooltip="LIBRARY").add_to(my_map)
-f.Marker(location=[34.072655, 72.644072], icon=f.Icon(color="red", icon="cloud"),popup="Helipad", tooltip="Giki helipad").add_to(my_map)
-f.Marker(location=[34.069296, 72.644957], icon=f.Icon(color="black", icon="cloud"),popup="FME", tooltip="FME").add_to(my_map)
-f.Marker(location=[34.069882, 72.643959], icon=f.Icon(color="red", icon="cloud"),popup="Audi", tooltip="Audi").add_to(my_map)
-f.Marker(location=[34.069616, 72.642323], icon=f.Icon(color="black", icon="cloud"),popup="FES", tooltip="FES").add_to(my_map)
-f.Marker(location=[34.070118, 72.645633], icon=f.Icon(color="black", icon="cloud"),popup="FCME", tooltip="FCME").add_to(my_map)
-f.Marker(location=[34.068576, 72.645982], icon=f.Icon(color="red", icon="cloud"),popup="Guest House", tooltip="Guest House").add_to(my_map)
-f.Marker(location=[34.070269, 72.647414], icon=f.Icon(color="red", icon="cloud"),popup="TuckShop", tooltip="TuckShop").add_to(my_map)
-f.Marker(location=[34.069029, 72.643294], icon=f.Icon(color="black", icon="cloud"),popup="FCSE", tooltip="FCSE").add_to(my_map)
-f.Marker(location=[34.069456, 72.641095], icon=f.Icon(color="red", icon="cloud"),popup="StudentMasjid", tooltip="StudentMasjid").add_to(my_map)
-f.Marker(location=[34.068300, 72.641663], icon=f.Icon(color="red", icon="cloud"),popup="Sports Ground", tooltip="Sports Ground").add_to(my_map)
-f.Marker(location=[34.067887, 72.639636], icon=f.Icon(color="red", icon="cloud"),popup="Sports Complex", tooltip="Sports Complex").add_to(my_map)
-f.Marker(location=[34.068491, 72.639453], icon=f.Icon(color="purple", icon="cloud"),popup="Hostel 10", tooltip="Hostel 10").add_to(my_map)
-f.Marker(location=[34.068611, 72.640354], icon=f.Icon(color="purple", icon="cloud"),popup="Hostel 9", tooltip="Hostel 9").add_to(my_map)
-f.Marker(location=[34.069069, 72.639464], icon=f.Icon(color="purple", icon="cloud"),popup="Hostel 2", tooltip="Hostel 2").add_to(my_map)
-f.Marker(location=[34.069145, 72.640309], icon=f.Icon(color="purple", icon="cloud"),popup="Hostel 1", tooltip="Hostel 1").add_to(my_map)
-f.Marker(location=[34.070273, 72.640196], icon=f.Icon(color="purple", icon="cloud"),popup="Hostel 5", tooltip="Hostel 5").add_to(my_map)
-f.Marker(location=[34.070220, 72.639359], icon=f.Icon(color="purple", icon="cloud"),popup="Hostel 6", tooltip="Hostel 6").add_to(my_map)
-f.Marker(location=[34.069638, 72.639418], icon=f.Icon(color="purple", icon="cloud"),popup="Hostel 4", tooltip="Hostel 4").add_to(my_map)
-f.Marker(location=[34.069678, 72.640319], icon=f.Icon(color="purple", icon="cloud"),popup="Hostel 3", tooltip="Hostel 3").add_to(my_map)
-f.Marker(location=[34.071215878227676, 72.64143689337763],icon=f.Icon(color="purple"), popup="HOSTEL 12", tooltip="HOSTEL 12").add_to(my_map)
-f.Marker(location=[34.07101128044904, 72.64084684626256],icon=f.Icon(color="purple"), popup="HOSTEL 11", tooltip="HOSTEL 11").add_to(my_map)
-f.Marker(location=[34.070389, 72.641103],icon=f.Icon(color="purple"), popup="HOSTEL 8", tooltip="HOSTEL 8").add_to(my_map)
-f.Marker(location=[34.068138, 72.643522], icon=f.Icon(color="red", icon="cloud"),popup="Admin Block", tooltip="Admin Block").add_to(my_map)
-f.Marker(location=[34.071033, 72.653838], icon=f.Icon(color="red", icon="cloud"),popup="Market", tooltip="Market").add_to(my_map)
-f.Marker(location=[34.065350, 72.660956], icon=f.Icon(color="red", icon="cloud"),popup="RVC Jamia Masjid", tooltip="RVC Jamia Masjid").add_to(my_map)
-f.Marker(location=[34.071613, 72.645029], icon=f.Icon(color="black", icon="cloud"),popup="Brabers", tooltip="Brabers").add_to(my_map)
-f.Marker(location=[34.071701, 72.645716], icon=f.Icon(color="orange", icon="cloud"),popup="Incubator", tooltip="Incubator").add_to(my_map)
+f.Marker(location=[34.072437, 72.642489], 
+            popup="FACULTY CLUB", 
+            tooltip="FACULTY CLUB"
+        ).add_to(my_map)
+f.Marker(location=[34.069005, 72.647229], 
+                icon=f.Icon(color="orange", icon="cloud"),
+                popup="TUC MOSQUE", 
+                tooltip="TUC MOSQUE"
+            ).add_to(my_map)
+f.Marker(location=[34.071211, 72.643594], 
+                icon=f.Icon(color="red", icon="cloud"),
+                popup="LIBRARY", 
+                tooltip="LIBRARY"
+            ).add_to(my_map)
+f.Marker(location=[34.072655, 72.644072], 
+            icon=f.Icon(color="red", icon="cloud"),
+            popup="Helipad", 
+            tooltip="Giki helipad"
+        ).add_to(my_map)
+f.Marker(location=[34.069296, 72.644957], 
+            icon=f.Icon(color="black", icon="cloud"),
+            popup="FME", 
+            tooltip="FME"
+        ).add_to(my_map)
+f.Marker(location=[34.069882, 72.643959], 
+            icon=f.Icon(color="red", icon="cloud"),
+            popup="Audi", 
+            tooltip="Audi"
+        ).add_to(my_map)
+f.Marker(location=[34.069616, 72.642323], 
+            icon=f.Icon(color="black", icon="cloud"),
+            popup="FES", 
+            tooltip="FES"
+        ).add_to(my_map)
+f.Marker(location=[34.070118, 72.645633], 
+            icon=f.Icon(color="black", icon="cloud"),
+            popup="FCME", 
+            tooltip="FCME"
+        ).add_to(my_map)
+f.Marker(location=[34.068576, 72.645982], 
+            icon=f.Icon(color="red", icon="cloud"),
+            popup="Guest House"
+            , tooltip="Guest House"
+        ).add_to(my_map)
+f.Marker(location=[34.070269, 72.647414], 
+            icon=f.Icon(color="red", icon="cloud"),
+            popup="TuckShop", 
+            tooltip="TuckShop"
+        ).add_to(my_map)
+f.Marker(location=[34.069029, 72.643294], 
+            icon=f.Icon(color="black", icon="cloud"),
+            popup="FCSE", 
+            tooltip="FCSE"
+        ).add_to(my_map)
+f.Marker(location=[34.069456, 72.641095], 
+            icon=f.Icon(color="red", icon="cloud"),
+            popup="StudentMasjid", 
+            tooltip="StudentMasjid"
+        ).add_to(my_map)
+f.Marker(location=[34.068300, 72.641663], 
+                icon=f.Icon(color="red", icon="cloud"),
+                popup="Sports Ground", 
+                tooltip="Sports Ground"
+            ).add_to(my_map)
+f.Marker(location=[34.067887, 72.639636], 
+                icon=f.Icon(color="red", icon="cloud"),
+                popup="Sports Complex", 
+                tooltip="Sports Complex"
+            ).add_to(my_map)
+f.Marker(location=[34.068491, 72.639453], 
+                icon=f.Icon(color="purple", icon="cloud"),
+                popup="Hostel 10", 
+                tooltip="Hostel 10"
+            ).add_to(my_map)
+f.Marker(location=[34.068611, 72.640354], 
+                icon=f.Icon(color="purple", icon="cloud"),
+                popup="Hostel 9", 
+                tooltip="Hostel 9"
+            ).add_to(my_map)
+f.Marker(location=[34.069069, 72.639464], 
+                icon=f.Icon(color="purple", icon="cloud"),
+                popup="Hostel 2", 
+                tooltip="Hostel 2"
+            ).add_to(my_map)
+f.Marker(location=[34.069145, 72.640309], 
+                icon=f.Icon(color="purple", icon="cloud"),
+                popup="Hostel 1", 
+                tooltip="Hostel 1"
+            ).add_to(my_map)
+f.Marker(location=[34.070273, 72.640196], 
+                icon=f.Icon(color="purple", icon="cloud"),
+                popup="Hostel 5", 
+                tooltip="Hostel 5"
+            ).add_to(my_map)
+f.Marker(location=[34.070220, 72.639359], 
+                icon=f.Icon(color="purple", icon="cloud"),
+                popup="Hostel 6", 
+                tooltip="Hostel 6"
+            ).add_to(my_map)
+f.Marker(location=[34.069638, 72.639418], 
+                icon=f.Icon(color="purple", icon="cloud"),
+                popup="Hostel 4", 
+                tooltip="Hostel 4"
+            ).add_to(my_map)
+f.Marker(location=[34.069678, 72.640319], 
+                icon=f.Icon(color="purple", icon="cloud"),
+                popup="Hostel 3", 
+                tooltip="Hostel 3"
+            ).add_to(my_map)
+f.Marker(location=[34.071215878227676, 72.64143689337763],
+                icon=f.Icon(color="purple"), 
+                popup="HOSTEL 12", 
+                tooltip="HOSTEL 12"
+            ).add_to(my_map)
+f.Marker(location=[34.07101128044904, 72.64084684626256],icon=f.Icon(color="purple"), 
+                popup="HOSTEL 11", 
+                tooltip="HOSTEL 11"
+            ).add_to(my_map)
+f.Marker(location=[34.070389, 72.641103],
+                icon=f.Icon(color="purple"), 
+                popup="HOSTEL 8", 
+                tooltip="HOSTEL 8"
+            ).add_to(my_map)
+f.Marker(location=[34.068138, 72.643522], 
+                icon=f.Icon(color="red", icon="cloud"),
+                popup="Admin Block", 
+                tooltip="Admin Block"
+            ).add_to(my_map)
+f.Marker(location=[34.071033, 72.653838], 
+                icon=f.Icon(color="red", icon="cloud"),
+                popup="Market", 
+                tooltip="Market"
+            ).add_to(my_map)
+f.Marker(location=[34.065350, 72.660956], 
+                icon=f.Icon(color="red", icon="cloud"),
+                popup="RVC Jamia Masjid", 
+                tooltip="RVC Jamia Masjid"
+            ).add_to(my_map)
+f.Marker(location=[34.071613, 72.645029], 
+                icon=f.Icon(color="black", icon="cloud"),
+                popup="Brabers", 
+                tooltip="Brabers"
+            ).add_to(my_map)
+f.Marker(location=[34.071701, 72.645716], 
+                icon=f.Icon(color="orange", icon="cloud"),
+                popup="Incubator", 
+                tooltip="Incubator"
+            ).add_to(my_map)
 
 # f.Marker(location=[],icon=f.Icon(color="orange", icon="cloud"), popup=" Clock Tower", tooltip="C TYPE").add_to(my_map)
 
